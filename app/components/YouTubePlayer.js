@@ -1,4 +1,3 @@
-"use client";
 import React, {useEffect, useState} from 'react';
 
 const YouTubePlayer = () => {
@@ -9,16 +8,21 @@ const YouTubePlayer = () => {
         script.src = 'https://www.youtube.com/iframe_api';
         document.head.appendChild(script);
 
-        const handleLoad = () => {
-            videoOn();
+        script.onload = () => {
+            window.onYouTubeIframeAPIReady = () => {
+                handleLoad();
+            };
         };
-
-        window.addEventListener('load', handleLoad);
 
         return () => {
             window.removeEventListener('load', handleLoad);
         };
     }, []);
+
+
+    const handleLoad = () => {
+        videoOn();
+    };
 
     const videoOn = () => {
         const videoContainerId = 'video';
@@ -64,7 +68,7 @@ const YouTubePlayer = () => {
     return (
         <div
             id="video"
-            className={"absolute min-w-full min-h-full w-auto h-auto pointer-events-none -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 border-pink-300 border-2"}
+            className="absolute min-w-full min-h-full w-auto h-auto pointer-events-none -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 border-pink-300 border-2"
         ></div>
     );
 };
