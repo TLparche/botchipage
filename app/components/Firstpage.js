@@ -44,7 +44,7 @@ const Firstpage = () => {
                     <img src={"kessoku2.png"} alt={"/"} className={"w-full h-screen"}/>
                 </div>
                 <div
-                    className="absolute top-0 left-0 right-0 bg-cover bg-center before:block before:pt-[56.25%] z-20 h-screen">
+                    className="absolute top-0 left-0 right-0 bg-cover bg-center before:block before:pt-[56.25%] z-20 h-screen before:z-20">
                     <YouTubePlayer/>
                 </div>
             </div>
