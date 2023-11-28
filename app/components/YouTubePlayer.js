@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 
 const YouTubePlayer = () => {
-    const [videoId, setVideoId] = useState('Yd8kUoB72xU');
+    const videoId = 'Yd8kUoB72xU'
 
     useEffect(() => {
         const script = document.createElement('script');
