@@ -3,11 +3,11 @@ import React, { useState, useEffect } from 'react';
 import YouTubePlayer from '@/app/components/YouTubePlayer';
 
 const Firstpage = () => {
-    const [scrollOpacity, setScrollOpacity] = useState(1);
+    const [scrollOpacity, setScrollOpacity] = useState(0);
 
     const handleScroll = () => {
         const opacity = window.scrollY / 600;
-        setScrollOpacity(opacity < 0 ? 0 : opacity);
+        setScrollOpacity(opacity <= 0 ? 0 : opacity);
     };
 
     useEffect(() => {
