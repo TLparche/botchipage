@@ -68,7 +68,7 @@ const YouTubePlayer = () => {
     return (
         <div
             id="video"
-            className="absolute min-w-full min-h-full w-auto h-auto pointer-events-none -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 border-pink-300 border-2"
+            className="absolute min-w-full min-h-screen w-auto h-auto pointer-events-none -translate-x-1/2 top-0 left-1/2"
         ></div>
     );
 };
