@@ -1,6 +1,7 @@
 "use client";
 import React, {useState, useEffect} from 'react';
 import YouTubePlayer from '@/app/components/YouTubePlayer';
+import NavBar from '@/app/components/NavBar'
 
 const Firstpage = () => {
     const [scrollOpacity, setScrollOpacity] = useState(0);
@@ -34,11 +35,14 @@ const Firstpage = () => {
     };
     return (
         <div>
+            <div>
+                <NavBar/>
+            </div>
             <div className="h-screen w-full block relative bg-pink-300">
                 <div className="absolute top-0 left-0 right-0 bg-pink-300 z-30 h-full" style={{opacity: scrollOpacity}}>
                 </div>
                 <div
-                    className={`h-screen w-full fixed top-0 left-0 right-0 bg-pink-300 transition-opacity duration-1000 z-40 ${
+                    className={`h-screen w-full fixed top-0 left-0 right-0 bg-pink-300 transition-opacity duration-1000 z-50 ${
                         displayNone ? 'hidden' : ''}`}
                     style={{opacity: hidden ? 0 : 1}} onTransitionEnd={handleTransitionEnd}>
                     <img src={"kessoku2.png"} alt={"/"} className={"w-full h-screen"}/>
